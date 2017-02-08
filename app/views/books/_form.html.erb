@@ -1,11 +1,11 @@
 <%= render "layouts/errors", :object => @book %>
 
 <%= form_for @book do |f| %>
-  <%= f.label :name %>
+  <%= f.label :name, "Title" %>
   <%= f.text_field :name, class: "form-control" %>
   <%= f.label :author %>
   <%= f.text_field :author, class: "form-control" %>
-  <%= f.label :creation_date %>
+  <%= f.label :creation_date, "Date of First Publication" %>
   <%= f.date_field :creation_date, class: "form-control" %>
   <br>
   <%= f.submit class: "btn btn-info" %>

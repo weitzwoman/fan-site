@@ -1,4 +1,4 @@
-<h1><%= @book.name %></h1>
+<h1><%= @book.name + " by " + @book.author %></h1>
 
 <% if @book.reviews.any? %>
   <h4>Here are the reviews for this book:</h4>
