@@ -1,7 +1,14 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    if params[:order] == 'name'
+      @books = Book.all.order('name')
+    elsif params[:order] == 'author'
+      @books = Book.all.order('author')
+    else
+      @books = Book.all
+    end
   end
+
   def show
     @book = Book.find(params[:id])
   end
@@ -39,6 +46,6 @@ class BooksController < ApplicationController
 
 private
   def book_params
-    params.require(:book).permit(:name, :creation_date)
+    params.require(:book).permit(:name, :author, :creation_date)
   end
 end

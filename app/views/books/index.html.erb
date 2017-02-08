@@ -1,8 +1,13 @@
 <h1>Books</h1>
 <ul>
   <% @books.each do |book| %>
-    <li><%= link_to book.name, book_path(book) %></li>
+    <li><%= link_to book.name, book_path(book) %> by <%= link_to book.author, book_path(book)%></li>
   <% end %>
 </ul>
 
-<%= link_to "New Book", new_book_path %>
+<p>Sort by:
+  <%= link_to "Title", books_path(order: 'name') %>
+  or
+  <%= link_to "Author", books_path(order: 'author') %>
+</p>
+<%= link_to "Add New Book", new_book_path, class: "btn btn-info" %>
