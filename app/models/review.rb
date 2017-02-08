@@ -1,4 +1,5 @@
 class Review < ActiveRecord::Base
   belongs_to :book
-  validates :review, :presence => true
+  validates :reviewer, :presence => true
+  validates :content, :presence => true
 end

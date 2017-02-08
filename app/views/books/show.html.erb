@@ -1,0 +1,24 @@
+<h1><%= @book.name %></h1>
+
+<% if @book.reviews.any? %>
+  <h4>Here are the reviews for this book:</h4>
+
+  <ul>
+    <% @book.reviews.each do |review| %>
+      <li>
+        <%= review.content %> |
+        <%= link_to "Edit", edit_book_review_path(@book, review) %> |
+        <%= link_to "Delete", book_review_path(@book, review), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
+
+<p><%= link_to "Add a Review", new_book_review_path(@book) %></p>
+
+<p><%= link_to "Edit Book", edit_book_path(@book) %></p>
+<p><%= link_to "Delete Book", book_path(@book), :data => {:confirm => "are you sure?", :method => "delete"} %> </p>
+
+<p><%= link_to "Return to Home Page", books_path %></p>
