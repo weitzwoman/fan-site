@@ -1,7 +1,11 @@
 <h1>Books</h1>
 <ul>
-  <% @books.each do |book| %>
-    <li><%= link_to book.name, book_path(book) %> by <%= link_to book.author, book_path(book)%> published on <%= book.creation_date %></li>
+  <% @books.each do |book|
+    if book.reviews.any?
+      avg = book.reviews.map { |x| x["rating"].to_i } .reduce(:+) / book.reviews.size
+    end
+  %>
+    <li><%= link_to book.name, book_path(book) %> by <%= link_to book.author, book_path(book)%> published on <%= book.creation_date %>, average rating: <%= avg %></li>
   <% end %>
 </ul>
 
