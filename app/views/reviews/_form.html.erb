@@ -3,22 +3,24 @@
 <%= form_for [@book, @review] do |f| %>
 
   <%= f.label :reviewer %>
-  <%= f.text_field :reviewer %>
+  <%= f.text_field :reviewer, class: "form-control" %>
   <br>
   <%= f.label :content %>
-  <%= f.text_area :content %>
+  <%= f.text_area :content, class: "form-control" %>
   <br>
+  <span class="rating">
   <%= f.label :rating %>
-  <%= f.radio_button(:rating, 5) %>
-  <%= f.label(:rating, "5 Stars") %>
-  <%= f.radio_button(:rating, 4) %>
-  <%= f.label(:rating, "4 Stars") %>
-  <%= f.radio_button(:rating, 3) %>
-  <%= f.label(:rating, "3 Stars") %>
-  <%= f.radio_button(:rating, 2) %>
-  <%= f.label(:rating, "2 Stars") %>
   <%= f.radio_button(:rating, 1) %>
   <%= f.label(:rating, "1 Star") %>
+  <%= f.radio_button(:rating, 2) %>
+  <%= f.label(:rating, "2 Stars") %>
+  <%= f.radio_button(:rating, 3) %>
+  <%= f.label(:rating, "3 Stars") %>
+  <%= f.radio_button(:rating, 4) %>
+  <%= f.label(:rating, "4 Stars") %>
+  <%= f.radio_button(:rating, 5) %>
+  <%= f.label(:rating, "5 Stars") %>
+  </span>
   <br>
-  <%= f.submit %>
+  <%= f.submit class: "btn btn-info" %>
 <% end %>
