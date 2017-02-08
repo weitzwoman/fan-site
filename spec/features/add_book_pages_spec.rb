@@ -11,8 +11,9 @@ describe "the add a book process" do
     expect(page).to have_content("Animal Farm")
   end
 
-  # it "gives an error when no title is entered" do
-  #   visit new_book_path
-  #   click_on 'Create'
-  # end
+  it "gives an error when no title is entered" do
+    visit new_book_path
+    click_on 'Create Book'
+    expect(page).to have_content 'errors'
+  end
 end
