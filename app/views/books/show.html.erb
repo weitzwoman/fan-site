@@ -3,15 +3,18 @@
 <% if @book.reviews.any? %>
   <h4>Here are the reviews for this book:</h4>
 
-  <ul>
     <% @book.reviews.each do |review| %>
-      <li>
-        <%= review.content %> |
-        <%= link_to "Edit", edit_book_review_path(@book, review) %> |
-        <%= link_to "Delete", book_review_path(@book, review), :data => {:confirm => "Are you sure?", :method => "delete"} %>
-      </li>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <%= review.rating.to_s + " Stars | " + review.reviewer %>
+          <span class="pull-right">
+          <%= link_to "Edit", edit_book_review_path(@book, review) %> |
+          <%= link_to "Delete", book_review_path(@book, review), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+          </span>
+        </div>
+        <%= review.content %>
+      </div>
     <% end %>
-  </ul>
 <% else %>
   <p>There are no reviews yet!</p>
 <% end %>
