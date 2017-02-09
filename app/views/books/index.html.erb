@@ -4,7 +4,7 @@
     <% @books.each do |book| %>
       <li><%= link_to book.name, book_path(book) %> by <%= link_to book.author, book_path(book)%> published on <%= book.creation_date %>
         <% if book.average_rating? %>
-          , average rating: <%= book.average_rating %>
+          | average rating: <%= book.average_rating %>
         <% end %>
       </li>
     <% end %>
