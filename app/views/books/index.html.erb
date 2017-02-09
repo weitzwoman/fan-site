@@ -2,10 +2,11 @@
 <ul>
   <% @books.each do |book|
     if book.reviews.any?
-      avg = book.reviews.map { |x| x["rating"].to_i } .reduce(:+) / book.reviews.size
+      avg = (book.reviews.map { |x| x["rating"].to_f } .reduce(:+) / book.reviews.size).round(2)
     end
   %>
-    <li><%= link_to book.name, book_path(book) %> by <%= link_to book.author, book_path(book)%> published on <%= book.creation_date %>, average rating: <%= avg %></li>
+    <li><%= link_to book.name, book_path(book) %> by <%= link_to book.author, book_path(book)%> published on <%= book.creation_date %>, average rating: <%=       book.average_rating
+ %></li>
   <% end %>
 </ul>
 
@@ -13,5 +14,7 @@
   <%= link_to "Title", books_path(order: 'name') %>
   or
   <%= link_to "Author", books_path(order: 'author') %>
+  <!-- or
+  <%= link_to "Rating", books_path(order: 'rating') %> -->
 </p>
 <%= link_to "Add New Book", new_book_path, class: "btn btn-info" %>

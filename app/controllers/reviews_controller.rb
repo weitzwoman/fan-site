@@ -8,10 +8,12 @@ class ReviewsController < ApplicationController
     @book = Book.find(params[:book_id])
     @review = @book.reviews.new(review_params)
     if @review.save
+      @book.update(:average_rating => (@book.reviews.map { |x| x["rating"].to_f } .reduce(:+) / @book.reviews.size).round(2))
       redirect_to book_path(@review.book)
     else
       render :new
     end
+
   end
 
   def edit
