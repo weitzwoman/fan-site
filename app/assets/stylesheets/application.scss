@@ -4,3 +4,14 @@
 ul {
   list-style-type: none;
 }
+.panel {
+  margin-right: 250px;
+}
+
+.book-cover {
+  width: 200px;
+  float: right;
+  img {
+    width: 100%;
+  }
+}

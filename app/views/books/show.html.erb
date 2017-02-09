@@ -1,4 +1,7 @@
 <h1><%= @book.name + " by " + @book.author %></h1>
+<div class="book-cover">
+  <img src="<%= @book.image %>" alt="" />
+</div>
 
 <% if @book.reviews.any? %>
   <h4>Here are the reviews for this book:</h4>
