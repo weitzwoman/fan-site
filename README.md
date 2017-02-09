@@ -1,25 +1,60 @@
-# README
+# _Books Fan Site_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### _A web application to add Books and Reviews to share with fans. Epicodus Rails Week 1 2/8/2017_
 
-Things you may want to cover:
+#### By _**Tracie Weitzman, Devin Ludwig**_
 
-* Ruby version
+## Specifications
 
-* System dependencies
+#### 1. User can add Books, edit Books, and delete Books, with title, author, and date first published.
 
-* Configuration
+#### 2. User can add Reviews to Books, edit Reviews, delete Reviews, with Reviewer name, Content write-up, and book Rating.
 
-* Database creation
+#### 3. User can sort Books by title, author, or average rating.
 
-* Database initialization
+#### 4. User can view high rated Books and/or featured books on homepage.
 
-* How to run the test suite
+## Setup/Installation Requirements
 
-* Services (job queues, cache servers, search engines, etc.)
+* _In the Command Line, run:_
+```
+git clone https://github.com/weitzwoman/fan-site
+cd fan-site
+bundle install
+postgres
+```
 
-* Deployment instructions
+* _In a separate Command Line, run:_
+```
+rails db:create fan-site_development
+rails db:migrate
+rails db:test:prepare
+rails s
+```
+* _Then, in any modern browser, open:_
+```
+localhost:3000
+```
 
-* ...
-https://richonrails.com/articles/sortable-table-columns
+## Support and contact details
+
+_Contact us on Github at [weitzwoman](https://github.com/weitzwoman) or [devinludwig](https://github.com/devinludwig)_
+
+## Technologies Used
+
+* _HTML_
+* _SCSS_
+  * _Bootstrap_
+* _Ruby version 2.2.3_
+  * _Rails 5.0.1_
+* _Postgres_
+
+### License
+
+Books Fan Site is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+Books Fan Site is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with the Books Fan Site. If not, see http://www.gnu.org/licenses/.
+
+Copyright (c) 2017 **Tracie Weitzman, Devin Ludwig**
