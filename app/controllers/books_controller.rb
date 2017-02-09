@@ -6,9 +6,8 @@ class BooksController < ApplicationController
       @books = Book.all.order('name')
     elsif params[:order] == 'author'
       @books = Book.all.order('author')
-    # elsif params[:order] == 'rating'
-      # @books = Book.all.sort({|x,y| (x.reviews.map { |a| a["rating"].to_f } .reduce(:+) / x.reviews.size) <=> (y.reviews.map { |b| b["rating"].to_f } .reduce(:+) / y.reviews.size) })
-
+    elsif params[:order] == 'rating'
+      @books = Book.all.order('average_rating DESC')
     else
       @books = Book.all
     end
