@@ -1,12 +1,13 @@
-<h1>Books</h1>
-<ul>
-  <% @books.each do |book| %>
-    <li><%= link_to book.name, book_path(book) %> by <%= link_to book.author, book_path(book)%> published on <%= book.creation_date %>
-      <% if book.average_rating? %>
-        , average rating: <%= book.average_rating %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "Add New Book", new_book_path, class: "btn btn-info" %>
+<div class="well-home">
+  <h1>Books</h1>
+  <ul>
+    <% @books.each do |book| %>
+      <li><%= link_to book.name, book_path(book) %> by <%= link_to book.author, book_path(book)%> published on <%= book.creation_date %>
+        <% if book.average_rating? %>
+          , average rating: <%= book.average_rating %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "Add New Book", new_book_path, class: "btn btn-info" %>
+</div>
