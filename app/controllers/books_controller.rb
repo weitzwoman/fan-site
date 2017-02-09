@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-  helper_method :sort_rating
 
   def index
     if params[:order] == 'name'
@@ -46,6 +45,11 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book.destroy
     redirect_to books_path
+  end
+
+  def search
+    @books = Book.basic_search(params[:query])
+    render :index
   end
 
 private

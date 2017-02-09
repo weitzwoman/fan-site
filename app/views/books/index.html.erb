@@ -9,11 +9,4 @@
   <% end %>
 </ul>
 
-<p>Sort by:
-  <%= link_to "Title", books_path(order: 'name') %>
-  or
-  <%= link_to "Author", books_path(order: 'author') %>
-  or
-  <%= link_to "Rating", books_path(order: 'rating') %>
-</p>
 <%= link_to "Add New Book", new_book_path, class: "btn btn-info" %>
